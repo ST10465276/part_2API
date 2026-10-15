@@ -4,9 +4,9 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace part_2API.backend
-{
+{//start of namespace
     public class manage_join_events
-    {
+    {//start of class
 
 
         //method to view all categories so a user can choose one
@@ -226,11 +226,6 @@ namespace part_2API.backend
         }//end of store_enrolment method
 
 
-
-
-
-
-
         //method to view all of this user's own results
         public string view_my_results(HttpContext get_session)
         {
@@ -305,9 +300,6 @@ namespace part_2API.backend
 
         }//end of view_my_results method
 
-
-
-
         //method to view all events the user has enrolled in
         public string view_my_enrolments(HttpContext get_session)
         {
@@ -365,7 +357,7 @@ namespace part_2API.backend
 
                 //if no data was found, send a friendly message
                 if (!data_found)
-                {
+                {//start of if
                     message = "You have not enrolled in any events yet.....";
                 }
 
@@ -413,13 +405,13 @@ namespace part_2API.backend
                 int affected_rows = run_query.ExecuteNonQuery();
 
                 if (affected_rows == 0)
-                {
+                {//start of if/else
                     message = "Failed to cancel enrolment, either it does not exist or you do not own it !!!!!!!!";
                 }
                 else
                 {
                     message = "Enrolment with id " + enrolment_id + " is successfully cancelled..";
-                }
+                }//end of if/else
 
                 //close the connection
                 connection.Close();
