@@ -4,14 +4,14 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace part_2API.backend
-{
+{//start of namespace
     public class manage_results
-    {
-
+    {//start of class
 
         //method to view all enrolments in an event owned by this organizer
         public string view_enrolments_by_event(int? event_id, string organizer_id, HttpContext get_session)
-        {
+        {//start of method
+            
             //temp variables
             string message = "Failed to load enrolments !!!!!!!!";
             string connection_string = @"Data source=(localdb)\part_2_api;database=part_2;";
