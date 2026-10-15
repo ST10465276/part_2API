@@ -8,7 +8,7 @@ namespace part_2API.backend
         //creating a method to get the users info
         //from the sessions
         public string get_profile_info(HttpContext get_details)
-        {
+        {//start of get_profile_info method
 
             //temp variable declaration
             string details = "Please login firs...";
@@ -20,10 +20,11 @@ namespace part_2API.backend
             string? user_id = get_details.Session.GetString("user_id");
 
             //check if the session is empty or not
-            if ( user_email!=null ) {
+            if ( user_email!=null ) 
+            {//start of if
 
                 //then append
-                details = "----------Profile Details for " + user_name + "----------\n" +
+                details = "----------Profile Details for " + user_name + "-------------\n" +
                     "[ Fullname       ] :  " + user_name + "  \n" +
                     "[ Emaill address ] :  " + user_email + " \n" +
                     "[ Role           ] :  " + user_role + "\n" +
@@ -40,7 +41,7 @@ namespace part_2API.backend
 
         //update the user's details
         public string update_info(string fullname , string email,string choice , HttpContext get_sessions)
-        {
+        {//start of update_info method
 
             //temp variable declaration
             string message = "Failed to update the user's details, try again later....";
@@ -118,12 +119,8 @@ namespace part_2API.backend
                     }
 
 
-
                     //then close the connection
                     connect.Close();
-
-
-
 
             }
             catch (Exception error)
@@ -133,22 +130,15 @@ namespace part_2API.backend
             }
 
 
-
-
-
-
-
             //then return the message
             return message;
-
-
 
         }//end of method update info
 
 
         //creating a method check if the email already have an account or not
         public Boolean check_email(string email, SqlConnection connect)
-        {//start of methodlogin
+        {//start of method login
 
             bool found = false;
             //open the connection
@@ -170,34 +160,22 @@ namespace part_2API.backend
             while (get_data.Read())
             {
 
-
-
-
                 found = true;
 
-
-
-
             }//end of while
-
 
             //closing the connection
             get_data.Close();
             connect.Close();
-
 
             return found;
 
         }//end of method check email & login sessions
 
 
-
-
-
-
         //method to update the password
         public string update_password(string old_password , string new_password ,HttpContext get_sessions)
-        {
+        {//start of update_password method
 
             //temp variables
             string message = "Failed to update password , please try again later....";
