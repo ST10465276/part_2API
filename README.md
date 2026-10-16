@@ -8,3 +8,4 @@ Part 2 of this system involves how the API will power the whole RaceDay system t
 #YouTube Link:https://youtu.be/6zaPZcds0GQ
 
 #CI/CD Pipeline Screenshot: 
+<img width="1534" height="778" alt="CI" src="https://github.com/user-attachments/assets/05c2da45-5b05-4389-87f8-705d96941de2" />
