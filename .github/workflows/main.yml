@@ -1,0 +1,31 @@
+
+name: API Build and Unit Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore API dependencies
+        run: dotnet restore PART2/part_2API.csproj
+
+      - name: Build API
+        run: dotnet build PART2/part_2API.csproj --configuration Release --no-restore
+
+      - name: Restore test dependencies
+        run: dotnet restore PART2_API_TESTING/testing_API_part2.csproj
+
+      - name: Run unit tests
+        run: dotnet test PART2_API_TESTING/testing_API_part2.csproj --configuration Release
