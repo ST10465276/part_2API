@@ -5,6 +5,6 @@ Race_Day is an full-stack web-based event management system created for events s
 
 Part 2 of this system involves how the API will power the whole RaceDay system to handle all the data operations,enforce role-based access and fully tested.
 
-#YouTube Link https://www.youtube.com/watch?v=_VjFfUsYEt4
+#YouTube Link:https://youtu.be/6zaPZcds0GQ
 
-#CI/CD Pipeline Screenshot
+#CI/CD Pipeline Screenshot: 
